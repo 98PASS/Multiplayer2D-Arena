@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://4r3btt43ner3"]
+
+[ext_resource type="Script" uid="uid://b56ebcvbtrhep" path="res://Cenarios/Jardim/jardim.gd" id="1_nipn4"]
+
+[node name="Jardim" type="Node2D"]
+script = ExtResource("1_nipn4")
+
+[node name="Players" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Zones" type="Node" parent="."]

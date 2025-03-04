@@ -1,10 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://y50dnebor3f0"]
+[gd_scene load_steps=5 format=3 uid="uid://y50dnebor3f0"]
 
 [ext_resource type="Script" uid="uid://dfa7cau2mc0gi" path="res://Player/player_2d.gd" id="1_3t0ph"]
 [ext_resource type="Texture2D" uid="uid://bbkd1mvunx4w3" path="res://icon.svg" id="2_72vrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ttc"]
 size = Vector2(100, 100)
+
+[sub_resource type="GDScript" id="GDScript_3t0ph"]
+resource_name = "PlayerCamera"
+script/source = "extends Camera2D
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"Camera_Zoom_In\"):
+		zoom*=2
+	if event.is_action_pressed(\"Camera_Zoom_Out\"):
+		zoom/=2
+"
 
 [node name="Player2d" type="CharacterBody2D"]
 script = ExtResource("1_3t0ph")
@@ -14,3 +26,7 @@ texture = ExtResource("2_72vrr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r5ttc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = SubResource("GDScript_3t0ph")

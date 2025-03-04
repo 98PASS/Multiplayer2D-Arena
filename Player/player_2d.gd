@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+#@export var vision_range : float = 1000
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
