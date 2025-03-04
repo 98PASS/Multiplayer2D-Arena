@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wl7obqtr6ur3"]
+
+[ext_resource type="AudioStream" uid="uid://ck4k1k31movpi" path="res://GameComposition/Som/MenuSelection.wav" id="1_uqb1x"]
+
+[node name="GlobalAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_uqb1x")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://qr5hjryygom0"]
+
+[ext_resource type="Texture2D" uid="uid://bbkd1mvunx4w3" path="res://icon.svg" id="1_hi7rx"]
+
+[sub_resource type="GDScript" id="GDScript_hi7rx"]
+script/source = "extends Node2D
+
+var speed = 3000
+
+func _physics_process(delta: float) -> void:
+	position+=transform.x*speed*delta
+"
+
+[node name="PistolBullet" type="Node2D"]
+script = SubResource("GDScript_hi7rx")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.05)
+texture = ExtResource("1_hi7rx")

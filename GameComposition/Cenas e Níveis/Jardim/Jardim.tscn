@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://4r3btt43ner3"]
+
+[ext_resource type="Script" uid="uid://b56ebcvbtrhep" path="res://GameComposition/Cenas e Níveis/Jardim/jardim.gd" id="1_nipn4"]
+[ext_resource type="Texture2D" uid="uid://7oeqqvyc2x0s" path="res://GameComposition/Arte/Textures/grass_01.png" id="2_vi4bl"]
+[ext_resource type="Texture2D" uid="uid://bbkd1mvunx4w3" path="res://icon.svg" id="3_mdeew"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a15gj"]
+polygon = PackedVector2Array(-56, -61.44, 56, -61.44, 56, 60.16, -52, 60.16)
+
+[node name="Jardim" type="Node2D"]
+script = ExtResource("1_nipn4")
+
+[node name="Players" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Zones" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 1492.0
+offset_bottom = 968.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_vi4bl")
+stretch_mode = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[node name="Obstáculo" type="StaticBody2D" parent="."]
+position = Vector2(351, 468)
+scale = Vector2(0.5, 0.78125)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstáculo"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Icon" type="Sprite2D" parent="Obstáculo"]
+texture = ExtResource("3_mdeew")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Obstáculo"]
+occluder = SubResource("OccluderPolygon2D_a15gj")
+
+[node name="Obstáculo2" type="StaticBody2D" parent="."]
+position = Vector2(496, 467)
+scale = Vector2(0.5, 0.78125)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstáculo2"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Icon" type="Sprite2D" parent="Obstáculo2"]
+texture = ExtResource("3_mdeew")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Obstáculo2"]
+occluder = SubResource("OccluderPolygon2D_a15gj")
+
+[node name="Obstáculo3" type="StaticBody2D" parent="."]
+position = Vector2(709, 477)
+rotation = 0.680565
+scale = Vector2(0.5, 0.78125)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstáculo3"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Icon" type="Sprite2D" parent="Obstáculo3"]
+texture = ExtResource("3_mdeew")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Obstáculo3"]
+occluder = SubResource("OccluderPolygon2D_a15gj")
